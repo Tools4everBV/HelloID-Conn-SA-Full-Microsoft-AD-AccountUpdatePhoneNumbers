@@ -1,107 +1,107 @@
 [
     {
-        "label":  "Select user account",
-        "fields":  [
-                       {
-                           "key":  "searchValue",
-                           "templateOptions":  {
-                                                   "label":  "Search (wildcard search in Name, Display name, UserPrincipalName and Mail)",
-                                                   "placeholder":  "Name, Display name, UserPrincipalName or Mail (use * to search all users)",
-                                                   "required":  true,
-                                                   "minLength":  1
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Hide element",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "gridUsers",
-                           "templateOptions":  {
-                                                   "label":  "Select user",
-                                                   "required":  true,
-                                                   "grid":  {
-                                                                "columns":  [
-                                                                                {
-                                                                                    "headerName":  "Display Name",
-                                                                                    "field":  "DisplayName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "User Principal Name",
-                                                                                    "field":  "UserPrincipalName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Mobile",
-                                                                                    "field":  "Mobile"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "TelephoneNumber",
-                                                                                    "field":  "TelephoneNumber"
-                                                                                }
-                                                                            ],
-                                                                "height":  300,
-                                                                "rowSelection":  "single"
-                                                            },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_0",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-                                                                                                                 {
-                                                                                                                     "propertyName":  "searchValue",
-                                                                                                                     "otherFieldValue":  {
-                                                                                                                                             "otherFieldKey":  "searchValue"
-                                                                                                                                         }
-                                                                                                                 }
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "useFilter":  true,
-                                                   "allowCsvDownload":  true
-                                               },
-                           "type":  "grid",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  true
-                       }
-                   ]
+        "label": "Select user account",
+        "fields": [
+            {
+                "key": "searchValue",
+                "templateOptions": {
+                    "label": "Search (wildcard search in Name, Display name, UserPrincipalName and Mail)",
+                    "placeholder": "Name, Display name, UserPrincipalName or Mail (use * to search all users)",
+                    "required": true,
+                    "minLength": 1
+                },
+                "type": "input",
+                "summaryVisibility": "Hide element",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": false
+            },
+            {
+                "key": "gridUsers",
+                "templateOptions": {
+                    "label": "Select user",
+                    "required": true,
+                    "grid": {
+                        "columns": [
+                            {
+                                "headerName": "Display Name",
+                                "field": "DisplayName"
+                            },
+                            {
+                                "headerName": "User Principal Name",
+                                "field": "UserPrincipalName"
+                            },
+                            {
+                                "headerName": "Mobile",
+                                "field": "Mobile"
+                            },
+                            {
+                                "headerName": "TelephoneNumber",
+                                "field": "TelephoneNumber"
+                            }
+                        ],
+                        "height": 300,
+                        "rowSelection": "single"
+                    },
+                    "dataSourceConfig": {
+                        "dataSourceGuid": "$dataSourceGuid_0",
+                        "input": {
+                            "propertyInputs": [
+                                {
+                                    "propertyName": "searchValue",
+                                    "otherFieldValue": {
+                                        "otherFieldKey": "searchValue"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "useFilter": true,
+                    "allowCsvDownload": true
+                },
+                "type": "grid",
+                "summaryVisibility": "Show",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": true
+            }
+        ]
     },
     {
-        "label":  "Update Mobile",
-        "fields":  [
-                       {
-                           "key":  "mobile",
-                           "templateOptions":  {
-                                                   "label":  "Mobile",
-                                                   "pattern":  "^\\+316\\d{8}$",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridUsers",
-                                                   "dependOnProperty":  "Mobile"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "telephoneNumber",
-                           "templateOptions":  {
-                                                   "label":  "TelephoneNumber",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridUsers",
-                                                   "dependOnProperty":  "TelephoneNumber",
-                                                   "pattern":  "^\\+3188220\\d{4}$",
-                                                   "placeholder":  "+3188220...."
-                                               },
-                           "type":  "input",
-                           "defaultValue":  "+3188220",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       }
-                   ]
+        "label": "Update Mobile",
+        "fields": [
+            {
+                "key": "mobile",
+                "templateOptions": {
+                    "label": "Mobile",
+                    "pattern": "^\\+316\\d{8}$",
+                    "useDependOn": true,
+                    "dependOn": "gridUsers",
+                    "dependOnProperty": "Mobile"
+                },
+                "type": "input",
+                "summaryVisibility": "Show",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": false
+            },
+            {
+                "key": "telephoneNumber",
+                "templateOptions": {
+                    "label": "TelephoneNumber",
+                    "useDependOn": true,
+                    "dependOn": "gridUsers",
+                    "dependOnProperty": "TelephoneNumber",
+                    "pattern": "^\\+31\\d{9}$",
+                    "placeholder": "+31........."
+                },
+                "type": "input",
+                "defaultValue": "+31",
+                "summaryVisibility": "Show",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": false
+            }
+        ]
     }
 ]
